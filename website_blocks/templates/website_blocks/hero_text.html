@@ -1,12 +1,24 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 
-<div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-extrabold" >{{ self.title }}</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">{{ self.description|richtext }}</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">{{ self.button }}</button>
-      </div>
-    </div>
-  </div>
+<header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">{{ self.title }}</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">{{ self.description }}</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <button class="btn btn-primary btn-lg px-4 me-sm-3" value="{{ self.Button }}" href="#features">Get Started</button>
+                                    <button class="btn btn-outline-light btn-lg px-4" value="{{ self.Button }}" href="#!">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                            {% image self.image fill-300x200 as img %}
+                                <img src="{{ img.url }}" alt="{{ img.alt }}" class="card-img-top w-full" />
+                        </div>
+
+                    </div>
+                </div>
+            </header>

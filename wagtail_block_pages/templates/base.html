@@ -20,7 +20,10 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <!-- Dima custom CSS after the libraries ! -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_block_pages.css' %}">
-
+        <!---------Fontasowme!----------->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!---------------icons-------------!---->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -78,5 +81,21 @@
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
+
+        <!-------footer-!------>
+    <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright © Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">·</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">·</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

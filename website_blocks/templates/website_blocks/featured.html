@@ -1,0 +1,30 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+
+<div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">{{ self.title }}</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature  text-white rounded-3 mb-3">
+                                        {% image self.image fill-300x200 as img %}
+                                        <img src="{{ img.url }}" width="50px" height="50px" alt="{{ img.alt }}" >
+                                    </div>
+                                    <h2 class="h5">{{ self.subtitle }}</h2>
+                                    <p class="mb-0">{{ self.text }}</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature  text-white rounded-3 mb-3">
+                                {% image self.image fill-300x200 as img %}
+                                        <img src="{{ img.url }}" width="50px" height="50px" alt="{{ img.alt }}" >
+                                    </div>
+                                    <h2 class="h5">{{ self.subtitle }}</h2>
+                                    <p class="mb-0">{{ self.text }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>

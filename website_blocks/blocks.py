@@ -50,10 +50,14 @@ class QuoteBlock(blocks.StructBlock):
 class FeaturedBlock(blocks.StructBlock):
 
     title = blocks.CharBlock(required=False, help_text="Add Your title")
-    text = blocks.RichTextBlock(required=False, help_text="Add your text")
-    image=ImageChooserBlock()
-    subtitle=blocks.CharBlock(required=False,help_text="Add Your Username")
-
+    features=blocks.ListBlock(
+        blocks.StructBlock([
+            ("text", blocks.RichTextBlock(required=False, help_text="Add your text")),
+            ("image",ImageChooserBlock()),
+            ("subtitle" ,blocks.CharBlock(required=False, help_text="Add Your Username"))
+    ]
+    )
+    )
     class Meta:  # noqa
         template = "website_blocks/featured.html"
         icon = "placeholder"
